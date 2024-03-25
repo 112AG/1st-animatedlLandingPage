@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+#main{
+    height: 100%;width: 100%;
+    display: flex;
+    /* font-family: "Gilroy"; */
+}
+/* left div */
+#left{
+    height: 100%;
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+
+}
+#left #nav{
+    height: 90px; width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    color: white;
+    position: relative;
+    z-index: 999;
+    animation-name: mc;
+    opacity: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+}
+#nav h1{
+    font-size: 1.5vw;
+    font-weight: 400;
+    text-transform: uppercase;
+    user-select: none;
+}
+#nav i{
+    font-size: 1.4vw;
+    cursor: pointer;
+}
+#left img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    z-index: 99;
+    animation-delay: 1s;
+    animation-name: roti;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+#left>h1{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    font-size: 90px;
+    text-align: end;
+    padding:0 10px 10px 0;
+    font-weight: 500;
+    letter-spacing: 0.3vw;
+    line-height: 85px;
+    animation-name: bc;
+    animation-delay: 1.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    z-index: 99;
+}
+/* right div*/
+#right{
+    height: 100%;
+    width: 50%;
+    position: relative;
+}
+#img1{
+    position: absolute;
+    top: 0;
+    left: 40%;
+    transform: translate(-50%, 0);
+    height: 30%;
+    width: 24%;
+    object-fit: cover;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+#img2{
+    position: absolute;
+    top: 33%;
+    left: 10%;
+    transform: translate(-50%, 0);
+    height: 38%;
+    width: 26%;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+#img3{
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    transform: translate(-50%, 0);
+    height: 32%;
+    width: 26%;
+    object-fit: cover;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+#right>h1{
+    position: absolute;
+    top: 35%;
+    right: -18%;
+    font-size: 50px;
+    transform: rotate(-90deg);
+    color: black;
+    font-weight: 200;
+}
+
+#overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(137, 49, 49);
+    z-index: 9;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move {
+    0%{
+        transform: translateX(40%);
+        opacity: 0;
+    }
+    50%{
+        /* transform: translate(40%); */
+        opacity: 0.7  ;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+@keyframes roti{
+    0%{
+        transform: rotate(30deg) scale(1.4);
+        opacity: 0;
+    }
+    100%{
+        transform: rotate(0) scale(1);
+        opacity: 1;
+    }
+}
+@keyframes bc {
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes mc {
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
